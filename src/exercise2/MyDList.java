@@ -25,4 +25,33 @@ public class MyDList<E>
         if (tail == null) tail = newNode;
         size++;
     }
+
+	public void addLast(E item) {
+        MyNode<E> newNode = new MyNode<>(item);
+        newNode.setPrev(tail);
+        if (tail != null) tail.setNext(newNode);
+        tail = newNode;
+        if (head == null) head = newNode;
+        size++;
+    }
+
+    public E removeFirst() {
+        if (head == null) return null;
+        E elem = head.getElement();
+        head = head.getNext();
+        if (head != null) head.setPrev(null);
+        else tail = null;
+        size--;
+        return elem;
+    }
+
+    public E removeLast() {
+        if (tail == null) return null;
+        E elem = tail.getElement();
+        tail = tail.getPrev();
+        if (tail != null) tail.setNext(null);
+        else head = null;
+        size--;
+        return elem;
+    }
 }
