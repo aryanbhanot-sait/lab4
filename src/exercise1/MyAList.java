@@ -37,6 +37,18 @@ public class MyAList<E> implements Iterable<E>
         return list.size();
     }
 
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+
+    public Object[] toArray() {
+        return list.toArray();
+    }
+
+    public void clear() {
+        list.clear();
+    }
+
 	@Override
 	public Iterator<E> iterator()
 	{
