@@ -21,6 +21,21 @@ public class MyAList<E> implements Iterable<E>
         }
     }
 
+    public E get(int index) {
+        return list.get(index);
+    }
+
+    public void remove(int index) {
+        list.remove(index);
+    }
+
+    public void set(int index, E item) {
+        list.set(index, item);
+    }
+
+    public int size() {
+        return list.size();
+    }
 
 	@Override
 	public Iterator<E> iterator()
